@@ -1,0 +1,22 @@
+<%= form_with(model: stone, local: true) do |form| %>
+  <% if stone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stone.errors.count, "error") %> prohibited this stone from being saved:</h2>
+
+      <ul>
+      <% stone.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :info %>
+    <%= form.text_field :info %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
